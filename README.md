@@ -1,6 +1,6 @@
 # python-api
 
-I've built a simple REST api app using Python, a framework called Flask, Marshmallow.
+A simple REST api app using Python, a framework called Flask, and a datatype library called Marshmallow. Code is based on this tutorial:
 
 https://auth0.com/blog/developing-restful-apis-with-python-and-flask/#-span-id--bootstrapping-flask----span--Bootstrapping-a-Flask-Application
 
@@ -38,4 +38,20 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "amount": 300.0,
     "description": "loan payment"
 }' http://localhost:5000/incomes
+```
+
+# Docker
+
+## build Docker image
+
+```
+docker build -t cashman .
+```
+
+## run a new docker container named cashman
+
+```
+docker run --name cashman \
+    -d -p 5000:5000 \
+    cashman
 ```
